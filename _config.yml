@@ -2,8 +2,8 @@ title: DoctorLogic Schemas
 email: rdennis@doctorlogic.com
 description: >- # this means to ignore newlines until "baseurl:"
   Schema project for DoctorLogic Products. 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://schema.doctorlogic.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/dl.schema" # the subpath of your site, e.g. /blog
+url: "https://doctorlogicus.github.io/dl.schema" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
@@ -15,4 +15,4 @@ plugins:
 collections:
   schemas:
     output: true
-    permalink: /:path
+    permalink: /:path:output_ext
