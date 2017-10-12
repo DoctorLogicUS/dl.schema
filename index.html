@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<h1>Schemas</h1>
+
+{% for schema in site.schemas %}
+    {% capture url %}{{ schema.url }}{{ schema.ext }}{% endcapture %}
+    <h2><a href="{{ url }}">{{ url }}</a></h2>
+    {% case schema.ext %}
+        {% when '.json' %}
+            {% highlight json linenos %}{{ schema.output }}{% endhighlight %}
+        {% else %}
+            {% highlight plaintext linenos %}{{ schema.output }}{% endhighlight %}
+    {% endcase %}
+{% endfor %}
