@@ -4,3 +4,39 @@
 
 @import "syntax-highlighting";
 @import "layout";
+
+.schema-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.code-toggle {
+    display: none;
+
+    & ~ {
+        .code-toggle__label::before {
+            content: 'Show\0a0';
+        }
+
+        .highlight {
+            max-height: 0;
+        }
+    }
+
+    &:checked {
+        & ~ {
+            .code-toggle__label::before {
+                content: 'Hide\0a0';
+            }
+
+            .highlight {
+                max-height: none;
+            }
+        }
+    }
+}
+
+.code-toggle__label {
+    cursor: pointer;
+}

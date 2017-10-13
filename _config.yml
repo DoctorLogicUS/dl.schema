@@ -10,6 +10,10 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
 
 # add /schemas as a collection
 collections:

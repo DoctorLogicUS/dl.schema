@@ -1,0 +1,30 @@
+---
+# front-matter required to make document visible in jekyll collection
+---
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://schema.doctorlogic.com/component/v1/graph.json#",
+    "definitions": {},
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "$ref": "component.json#/properties/name"
+        },
+        "children": {
+            "description": "A list of component graphs.",
+            "items": {
+                "$ref": "#"
+            },
+            "type": "array"
+        },
+        "context": {
+            "type": "object",
+            "description": "The rendering context for the Component."
+        }
+    },
+    "required": [
+        "name",
+        "context"
+    ],
+    "type": "object"
+}

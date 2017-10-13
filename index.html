@@ -4,12 +4,18 @@ layout: default
 
 <h1>Schemas</h1>
 
-{% for schema in site.schemas %}
-    <h2><a href="{{ site.baseurl }}{{ schema.url }}">{{ schema.url }}</a></h2>
-    {% case schema.ext %}
-        {% when '.json' %}
-            {% highlight json linenos %}{{ schema.output }}{% endhighlight %}
-        {% else %}
-            {% highlight plaintext linenos %}{{ schema.output }}{% endhighlight %}
-    {% endcase %}
-{% endfor %}
+<ul class="schema-list">
+    {% for schema in site.schemas %}
+        <li class="schema-list__item">
+            <h2><a href="{{ site.baseurl }}{{ schema.url }}">{{ schema.url }}</a></h2>
+            <input id="code-toggle-{{ forloop.index }}" class="code-toggle" type="checkbox">
+            <label for="code-toggle-{{ forloop.index }}" class="code-toggle__label">Code</label>
+            {% case schema.ext %}
+                {% when '.json' %}
+                    {% highlight json linenos %}{{ schema.output }}{% endhighlight %}
+                {% else %}
+                    {% highlight plaintext linenos %}{{ schema.output }}{% endhighlight %}
+            {% endcase %}
+        </li>
+    {% endfor %}
+</ul>

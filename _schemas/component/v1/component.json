@@ -1,0 +1,45 @@
+---
+# front-matter required to make document visible in jekyll collection
+---
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://schema.doctorlogic.com/component/v1/component.json#",
+    "definitions": {
+        "name": {
+            "description": "The full name of the Component. The name must be of the pattern \"<component-type>:<component-name>\".",
+            "pattern": "^([a-z]|_[a-z])([a-z0-9_-]*[a-z0-9])?:([0-9]+|(([a-z]|_[a-z])([a-z0-9_-]*[a-z0-9])?))$",
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "dependencies": {
+            "items": {
+                "description": "A list of absolute or relative URLs required for this Component. Relative paths will be resolved from the manifest file path.",
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "description": {
+            "description": "The description of the Component.",
+            "type": "string"
+        },
+        "name": {
+            "$ref": "#/definitions/name"
+        },
+        "template": {
+            "description": "The optional template to be used by the Component.",
+            "type": "string"
+        },
+        "context": {
+            "description": "The default rendering context for all instances of the Component.",
+            "type": "object"
+        }
+    },
+    "required": [
+        "dependencies",
+        "description",
+        "name"
+    ],
+    "type": "object"
+}
