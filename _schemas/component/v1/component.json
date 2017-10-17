@@ -6,8 +6,13 @@
     "id": "http://schema.doctorlogic.com/component/v1/component.json#",
     "definitions": {
         "name": {
-            "description": "The full name of the Component. The name must be of the pattern \"<component-type>:<component-name>\".",
-            "pattern": "^([a-z]|_[a-z])([a-z0-9_-]*[a-z0-9])?:([0-9]+|(([a-z]|_[a-z])([a-z0-9_-]*[a-z0-9])?))$",
+            "description": "The name of the Component.",
+            "pattern": "^[a-z0-9_-]+$",
+            "type": "string"
+        },
+        "type": {
+            "description": "The type of the Component.",
+            "pattern": "^[a-z0-9_-]+$",
             "type": "string"
         }
     },
@@ -31,6 +36,9 @@
             "description": "The optional template to be used by the Component.",
             "type": "string"
         },
+        "type": {
+            "$ref": "#/definitions/type"
+        },
         "context": {
             "description": "The default rendering context for all instances of the Component.",
             "type": "object"
@@ -39,7 +47,8 @@
     "required": [
         "dependencies",
         "description",
-        "name"
+        "name",
+        "type"
     ],
     "type": "object"
 }

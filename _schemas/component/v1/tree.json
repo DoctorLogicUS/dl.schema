@@ -3,15 +3,18 @@
 ---
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://schema.doctorlogic.com/component/v1/graph.json#",
+    "id": "http://schema.doctorlogic.com/component/v1/tree.json#",
     "definitions": {},
     "additionalProperties": false,
     "properties": {
         "name": {
             "$ref": "component.json#/properties/name"
         },
+        "type": {
+            "$ref": "component.json#/properties/type"
+        },
         "children": {
-            "description": "A list of component graphs.",
+            "description": "A list of component trees.",
             "items": {
                 "$ref": "#"
             },
@@ -24,7 +27,7 @@
     },
     "required": [
         "name",
-        "context"
+        "type"
     ],
     "type": "object"
 }
