@@ -23,6 +23,27 @@
         "context": {
             "type": "object",
             "description": "The rendering context for the Component."
+        },
+        "mutators": {
+            "type": "array",
+            "description": "A list of Mutators to be run when the Component is rendered.",
+            "items": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "$ref": "mutator.json#/properties/name"
+                    },
+                    "type": {
+                        "$ref": "mutator.json#/properties/type"
+                    },
+                    "context": {
+                        "type": "object",
+                        "description": "The rendering context for the Mutator."
+                    }
+                }
+            }
         }
     },
     "required": [
