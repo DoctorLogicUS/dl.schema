@@ -37,10 +37,6 @@
                     },
                     "type": {
                         "$ref": "mutator.json#/properties/type"
-                    },
-                    "context": {
-                        "type": "object",
-                        "description": "The rendering context for the Mutator."
                     }
                 }
             }

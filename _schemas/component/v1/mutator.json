@@ -27,10 +27,6 @@
         },
         "type": {
             "$ref": "#/definitions/type"
-        },
-        "context": {
-            "description": "The default rendering context for all instances of the Mutator.",
-            "type": "object"
         }
     },
     "required": [
