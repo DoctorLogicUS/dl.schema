@@ -19,11 +19,23 @@
     "additionalProperties": false,
     "properties": {
         "dependencies": {
-            "items": {
-                "description": "A list of absolute or relative URLs required for this Component. Relative paths will be resolved from the manifest file path.",
-                "type": "string"
+            "description": "A list of absolute or relative URLs required for this Component. Relative paths will be resolved from the manifest file path.",
+            "additionalProperties": true,
+            "properties": {
+                "scripts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "styles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             },
-            "type": "array"
+            "type": "object"
         },
         "description": {
             "description": "The description of the Component.",
