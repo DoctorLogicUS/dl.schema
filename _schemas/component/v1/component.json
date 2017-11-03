@@ -54,10 +54,6 @@
         "context": {
             "description": "The default rendering context for all instances of the Component.",
             "type": "object"
-        },
-        "config": {
-            "description": "The configuration to override the database configuration.",
-            "type": "object"
         }
     },
     "required": [
