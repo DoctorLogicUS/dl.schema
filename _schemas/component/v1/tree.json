@@ -27,6 +27,25 @@
         "config": {
             "description": "The configuration to override the database configuration.",
             "type": "object"
+        },
+        "dependencies": {
+            "description": "A list of absolute or relative URLs required for this Component instance. Relative paths will be resolved from the manifest file path.",
+            "additionalProperties": true,
+            "properties": {
+                "scripts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "styles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object"
         }
     },
     "required": [
